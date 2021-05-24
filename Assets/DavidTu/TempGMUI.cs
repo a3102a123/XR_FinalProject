@@ -33,9 +33,10 @@ public class TempGMUI : MonoBehaviour
     }
     void ShowChapter(){
         //Debug.Log(Chapter_Obj+" ||| " + Chapter_Obj.transform.Find("Round/num"));
-        Round round = GameManager.GM.GetRound();
-        Stage stage = GameManager.GM.GetStage();
-        Chapter_Obj.transform.Find("Round/num").GetComponent<Text>().text = round.ToString();
-        Chapter_Obj.transform.Find("Stage/num").GetComponent<Text>().text = stage.ToString();
+        Route route = GameManager.GM.GetRoute();
+        Chapter_Obj.transform.Find("Route/num").GetComponent<Text>().text = route.ToString();
+    }
+    public void ChangeRoute(){
+        GameManager.GM.ChangeRoute(Route.A);
     }
 }

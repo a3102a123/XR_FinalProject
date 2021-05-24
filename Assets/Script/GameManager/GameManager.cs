@@ -10,11 +10,8 @@ public class GameManager : MonoBehaviour
     // Let variable only be changed in GM
     [HeaderAttribute("Private 能力值 (當GM被創建時將會被自動初始化)")]
     [SerializeField]
-    // 死過幾次或是經過幾天(類似章節，死一次或過完一天[完成3個事件]算進到一個新的章節)
-    private Round round;
-    [SerializeField]
-    // 當前該輪的第幾個事件
-    private Stage stage;
+    // 玩家在多線故事的哪條路線上
+    private Route route;
     [SerializeField]
     // 玩家大小
     private Size size;
@@ -44,8 +41,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("[GameManager] " + this.name +" : GM maintain the setting of developer");
             return;
         }
-        round = Round.Begin;
-        stage = Stage.Event1;
+        route = Route.NONE;
         size = Size.Tiny;
         status.init();
     }
@@ -54,36 +50,14 @@ public class GameManager : MonoBehaviour
         status.add(StatusType.INT,stat.INT);
         status.add(StatusType.HATE,stat.HATE);
     }
-    // 使事件+1 如果已完成一天的任務數則觸發 NextRound
-    public void NextStage(){
-        stage += 1;
-        if(stage == Stage.Final){
-            Debug.Log("[GameManager] " + this.name + " : Player finis all event in one day.");
-            NextRound();
-        }
-    }
-    // 死亡或過一天後 round +1 並將 stage 初始化為 Event1
-    public void NextRound(){
-        round += 1;
-        if(round != Round.Final){
-            stage = Stage.Event1;
-        }
-        else{
-            Debug.Log("[GameManager] " + this.name + " : It's already in final round. Can't dead again.");
-        }
-    }
-    // 死亡事件(round +1、初始 stage、[回到最初場景]) [] : 未完成考慮中...
-    public void DeadEvent(){
-        NextRound();
+    public void ChangeRoute(Route new_route){
+        route = new_route;
     }
     // get gamemanager private variable
     public Status GetStatus(){
         return status;
     }
-    public Round GetRound(){
-        return round;
-    }
-    public Stage GetStage(){
-        return stage;
+    public Route GetRoute(){
+        return route;
     }
 }

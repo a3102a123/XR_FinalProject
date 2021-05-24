@@ -8,14 +8,6 @@ public class OptionTrigger : MonoBehaviour
     [SerializeField]
     private bool is_finish = false;
 
-    [HeaderAttribute("在哪個章節觸發")]
-    [SerializeField]
-    [Tooltip("設為 ANY 在任意round觸發")]
-    private Round round;
-    [SerializeField]
-    [Tooltip("設為 ANY 在任意stage觸發")]
-    private Stage stage;
-
     [HeaderAttribute("觸發後影響的能力值變化")]
     public Status effect_status = new Status(0,0,0);
 
@@ -30,13 +22,6 @@ public class OptionTrigger : MonoBehaviour
     [Tooltip("能力值的 max 或 min 皆設為-1表示不檢查該能力值的限制")]
     [SerializeField]
     private Status min_status = new Status(-1,-1,-1);
-
-    [HeaderAttribute("完成後是否使影響GM的章節選項(2選1優先處理dead)")]
-    [Tooltip("勾選後GM的stage會往前進1")]
-    public bool is_next = false;
-    [Tooltip("勾選後GM的round會往前進1，並將stage reset")]
-    public bool is_dead = false;
-    
 
     void start(){
         is_finish = false;
@@ -55,7 +40,6 @@ public class OptionTrigger : MonoBehaviour
             if(!is_finish){
                 is_finish = true;
                 GameManager.GM.ChangeStatus(effect_status);
-                NextChapter();
             }
             else{
                 Debug.Log( "[OptionTrigger] " + this.name + " : is already finished!");
@@ -63,43 +47,13 @@ public class OptionTrigger : MonoBehaviour
         }
         return is_finish;
     }
-    void NextChapter(){
-        if(is_dead){
-            GameManager.GM.DeadEvent();
-        }
-        else if(is_next){
-            GameManager.GM.NextStage();
-        }
-    }
-    // 檢查是否符合章節設定及能力值限制
+    // 檢查是否符合能力值限制
     bool Check(){
-        Debug.Log( "[OptionTrigger] " + this.name + " : " + "Condition : " + "Round : " + round + " Stage : " + stage);
-        if(CheckChapter()){
-            return CheckLimit();
-        }
-        return false;
-    }
-    // UI 或選項 可以使用該 function 判斷是否要顯現
-    public bool CheckChapter(){
-        Round GM_round = GameManager.GM.GetRound();
-        Stage GM_stage = GameManager.GM.GetStage();
-        // 在特定的回合及事件觸發
-        if( (round == GM_round) && (stage == GM_stage) ){
-            return true;
-        }
-        // 在任意回合的特定事件觸發
-        else if( (round == Round.ANY) && (stage == GM_stage) ){
-            return true;
-        }
-        // 在特定回合的任意事件觸發
-        else if( (round == GM_round) && (stage == Stage.ANY) ){
-            return true;
-        }
-        // 隨時隨地都能觸發
-        else if ( (round == Round.ANY) && (stage == Stage.ANY) ){
-            return true;
-        }
-        return false;
+        Debug.Log( "[OptionTrigger] " + this.name + " : " + "Condition : \n"
+          + "STR : " + min_status.STR + " ~ " + max_status.STR
+          + " INT : " + min_status.INT + " ~ " + max_status.INT
+          + " HATE : " + min_status.HATE + " ~ " + max_status.HATE );
+        return CheckLimit();
     }
     public bool CheckLimit(){
         if(is_limit){
