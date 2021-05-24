@@ -2,22 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Round{
+public enum Route{
     NONE,
-    ANY,
-    Begin,
-    First,
-    Second,
-    Third,
-    Final
-}
-public enum Stage{
-    NONE,
-    ANY,
-    Event1,
-    Event2,
-    Event3,
-    Final
+    A = 100,
+    B,
+    C,
 }
 public enum StatusType{
     STR,
@@ -46,10 +35,6 @@ public class Status{
     public void add(StatusType type,int num){
         ref int ability = ref DetType(type);
         ability += num;
-    }
-    public void min(StatusType type,int num){
-        ref int ability = ref DetType(type);
-        ability -= num;
     }
     // Determine which type of the ability should be change
     private ref int DetType(StatusType type){
