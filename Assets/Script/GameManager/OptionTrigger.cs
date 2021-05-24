@@ -58,7 +58,7 @@ public class OptionTrigger : MonoBehaviour
                 NextChapter();
             }
             else{
-                Debug.Log( "[OptionTrigger] " + this.name + " is already finished!");
+                Debug.Log( "[OptionTrigger] " + this.name + " : is already finished!");
             }
         }
         return is_finish;
