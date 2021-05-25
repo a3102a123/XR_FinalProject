@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Kador.meta
+guid: b0d444d649d03f14ab688f55846866a9
+=======
 guid: 4a724b0633394b141b9a6354f7371c9d
+>>>>>>> 4c3b35b05b7cd3df5aec8ce486b620d1e2fe6735:Assets/OhMyBug/bug_material.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
