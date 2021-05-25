@@ -36,6 +36,7 @@ public class OptionTrigger : MonoBehaviour
     // 如果符合則呼叫GM更改能力值及檢查章節設置呼叫GM更改章節
     // 回傳是否設置的結果 for check
     public bool SetFinish(){
+        LogMsg();
         if(Check()){
             if(!is_finish){
                 is_finish = true;
@@ -48,61 +49,24 @@ public class OptionTrigger : MonoBehaviour
         return is_finish;
     }
     // 檢查是否符合能力值限制
-    bool Check(){
-        Debug.Log( "[OptionTrigger] " + this.name + " : " + "Condition : \n"
-          + "STR : " + min_status.STR + " ~ " + max_status.STR
-          + " INT : " + min_status.INT + " ~ " + max_status.INT
-          + " HATE : " + min_status.HATE + " ~ " + max_status.HATE );
-        return CheckLimit();
-    }
-    public bool CheckLimit(){
+    public bool Check(){
         if(is_limit){
-            // check STR
-            if(min_status.STR != -1 || max_status.STR != -1){
-                int value = GameManager.GM.GetStatus().STR;
-                int max = max_status.STR;
-                int min = min_status.STR;
-                if(min_status.STR != -1 && value < min){
-                    return false;
-                }
-                if(max_status.STR != -1 && value > max){
-                    return false;
-                }
-            }
-            // check INT
-            if(min_status.INT != -1 || max_status.INT != -1){
-                int value = GameManager.GM.GetStatus().INT;
-                int max = max_status.INT;
-                int min = min_status.INT;
-                if(min_status.INT != -1 && value < min){
-                    return false;
-                }
-                if(max_status.INT != -1 && value > max){
-                    return false;
-                }
-            }
-            // check HATE
-            if(min_status.HATE != -1 || max_status.HATE != -1){
-                int value = GameManager.GM.GetStatus().HATE;
-                int max = max_status.HATE;
-                int min = min_status.HATE;
-                if(min_status.HATE != -1 && value < min){
-                    return false;
-                }
-                if(max_status.HATE != -1 && value > max){
-                    return false;
-                }
-            }
-            // 能力值的限制皆符合回傳true
-            return true;
+            return GameManager.GM.CheckLimit(min_status,max_status);
         }
         else{
-            // 沒有能力值限制回傳true
+            // 沒有能力限制,回傳true
             return true;
         }
     }
     // function for button to trigger
     public void ButtonFinish(){
         SetFinish();
+    }
+
+    void LogMsg(){
+        Debug.Log( "[OptionTrigger] " + this.name + " : " + "Condition : \n"
+          + "STR : " + min_status.STR + " ~ " + max_status.STR
+          + " INT : " + min_status.INT + " ~ " + max_status.INT
+          + " HATE : " + min_status.HATE + " ~ " + max_status.HATE );
     }
 }

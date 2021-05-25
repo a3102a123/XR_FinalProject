@@ -32,6 +32,11 @@ public class Status{
         INT = 100;
         HATE = 0;
     }
+    public void clear(){
+        STR = -1;
+        INT = -1;
+        HATE = -1;
+    }
     public void add(StatusType type,int num){
         ref int ability = ref DetType(type);
         ability += num;
@@ -55,5 +60,24 @@ public class Status{
         INT = i;
         HATE = h;
     }
+    public Status(){
+        STR = -1;
+        INT = -1;
+        HATE = -1;
+    }
 }
 
+[System.Serializable]
+public class EventCondition{
+    [HeaderAttribute("事件條件")]
+    public Status max_status;
+    public Status min_status;
+    [HeaderAttribute("文本檔案路徑")]
+    [Tooltip("輸入以Dialogue資料夾為根目錄的相對路徑")]
+    public string dialogue_filename;
+    // Constructor
+    EventCondition(){
+        min_status = new Status();
+        max_status = new Status();
+    }
+}

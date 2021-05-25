@@ -12,12 +12,23 @@ public class UIManager : MonoBehaviour
     [Tooltip("文本顯示時間")]
     public int Display_Time = 3;
 
+    [HideInInspector]
+    public DialogueDisplayer displayer;
+
     void Awake(){
         Instance = this;
-        DontDestroyOnLoad(this);
         init();
     }
     void init(){
         TextWindow.text = "";
+        displayer = null;
+    }
+    public void Dialogue_Continue(){
+        if(displayer == null){
+            Debug.Log("[UIManager] "+ this.name + " : No dialogue is played!");
+        }
+        else{
+            displayer.continue_read();
+        }
     }
 }

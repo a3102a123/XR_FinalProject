@@ -60,4 +60,44 @@ public class GameManager : MonoBehaviour
     public Route GetRoute(){
         return route;
     }
+    public bool CheckLimit(Status min_status,Status max_status){
+        // check STR
+        if(min_status.STR != -1 || max_status.STR != -1){
+            int value = this.status.STR;
+            int max = max_status.STR;
+            int min = min_status.STR;
+            if(min_status.STR != -1 && value < min){
+                return false;
+            }
+            if(max_status.STR != -1 && value > max){
+                return false;
+            }
+        }
+        // check INT
+        if(min_status.INT != -1 || max_status.INT != -1){
+            int value = this.status.INT;
+            int max = max_status.INT;
+            int min = min_status.INT;
+            if(min_status.INT != -1 && value < min){
+                return false;
+            }
+            if(max_status.INT != -1 && value > max){
+                return false;
+            }
+        }
+        // check HATE
+        if(min_status.HATE != -1 || max_status.HATE != -1){
+            int value = this.status.HATE;
+            int max = max_status.HATE;
+            int min = min_status.HATE;
+            if(min_status.HATE != -1 && value < min){
+                return false;
+            }
+            if(max_status.HATE != -1 && value > max){
+                return false;
+            }
+        }
+        // 能力值的限制皆符合回傳true
+        return true;
+    }
 }

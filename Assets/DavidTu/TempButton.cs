@@ -19,13 +19,13 @@ public class TempButton : MonoBehaviour
     }
     void display(){
         if(option_obj.activeSelf == false){
-            if(trigger.CheckLimit()){
+            if(trigger.Check()){
                 option_obj.SetActive(true);
                 Debug.Log(this.name + " Active");
             }
         }
         else{
-            if(!trigger.CheckLimit()){
+            if(!trigger.Check()){
                 option_obj.SetActive(false);
                 Debug.Log(this.name + " Disable");
             }
