@@ -50,7 +50,6 @@ public class PlayerControl : MonoBehaviour
         {
             this.point -= 100;
         }
-        Debug.Log("point: " + this.point);
     }
 
     void OnTriggerEnter(Collider col)
@@ -60,6 +59,10 @@ public class PlayerControl : MonoBehaviour
             this.point -= 100;
             Destroy( col.gameObject );
         }
-        Debug.Log("point: " + this.point);
+    }
+
+    public int getPoints()
+    {
+        return this.point;
     }
 }
