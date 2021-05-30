@@ -81,3 +81,21 @@ public class EventCondition{
         max_status = new Status();
     }
 }
+
+[System.Serializable]
+public class EndCondition{
+    [HeaderAttribute("結局路線")]
+    public Route EndRoute = Route.NONE;
+    [HeaderAttribute("鍵盤遊戲成功的文本檔案路徑")]
+    [Tooltip("輸入以Dialogue資料夾為根目錄的相對路徑")]
+    public string success_filename;
+    [HeaderAttribute("鍵盤遊戲失敗的文本檔案路徑")]
+    [Tooltip("輸入以Dialogue資料夾為根目錄的相對路徑")]
+    public string fail_filename;
+    // Constructor
+    EndCondition(){
+        EndRoute = Route.NONE;
+        success_filename = "./End/NONE/Success.txt";
+        fail_filename = "./End/NONE/Fail.txt";
+    }
+}
