@@ -52,4 +52,14 @@ public class PlayerControl : MonoBehaviour
         }
         Debug.Log("point: " + this.point);
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if( col.gameObject.tag == "Obstacle" )
+        {
+            this.point -= 100;
+            Destroy( col.gameObject );
+        }
+        Debug.Log("point: " + this.point);
+    }
 }
