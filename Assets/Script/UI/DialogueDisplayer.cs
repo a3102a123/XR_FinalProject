@@ -37,7 +37,7 @@ public class DialogueDisplayer : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("[DialogueDisplayer] " + this.name + " : is_act : " + is_act);
+        //Debug.Log("[DialogueDisplayer] " + this.name + " : is_act : " + is_act);
         if(is_act){
             if(is_show)
             {

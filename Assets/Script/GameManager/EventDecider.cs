@@ -9,7 +9,6 @@ public class EventDecider : MonoBehaviour
     [SerializeField]
     private EventCondition[] Event_List = new EventCondition[2];
 
-    private DialogueDisplayer displayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +23,7 @@ public class EventDecider : MonoBehaviour
     public void DecideEvent(){
         int i ;
         int len = Event_List.Length;
+        DialogueDisplayer displayer;
         EventCondition Event = null;
         for(i = 0 ; i < len ; i++ ){
             Event = Event_List[i];
