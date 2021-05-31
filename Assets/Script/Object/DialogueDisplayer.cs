@@ -27,8 +27,8 @@ public class DialogueDisplayer : MonoBehaviour
 
     // fur construct in script, prevent Strat act after script calling class function
     void Awake(){
-        Debug.Log("[DialogueDisplayer] " + this.name + " : " + (UIManager.Instance));
-        init();
+        //Debug.Log("[DialogueDisplayer] " + this.name + " : " + (UIManager.Instance));
+        //init();
     }
     void Start(){
         if(text_window == null){
@@ -124,11 +124,11 @@ public class DialogueDisplayer : MonoBehaviour
     public void btn_Activate(){
         Activate();
     }
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
         Debug.Log("[DialogueDisplayer] " + this.name + " : Trigger Acitvate!");
         Activate();
-    }
+    }*/
 
     // Construct function for MonoBehaviour
     public void Constructor(string path){
