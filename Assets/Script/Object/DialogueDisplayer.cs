@@ -64,6 +64,7 @@ public class DialogueDisplayer : MonoBehaviour
         UIManager UI = UIManager.Instance;
         // text window 沒有被使用，註冊下來使用
         if(UI.displayer == null){
+            // Debug.Log("[DialogueDisplayer] " + this.name + " : Registed!!");
             UI.displayer = this;
             return true;
         }
@@ -111,6 +112,8 @@ public class DialogueDisplayer : MonoBehaviour
     // 回傳是否註冊成功，失敗的話要 reactivate
     public bool Activate(){
         if(!is_act && Register()){
+            // prevent reinitial in Start() when create by other script
+            init();
             open_file();
             is_act = true;
             is_show = true;

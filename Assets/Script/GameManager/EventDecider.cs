@@ -52,7 +52,4 @@ public class EventDecider : MonoBehaviour
             Destroy(displayer);
         };
     }
-    void Reset() {
-        //Event_List = new EventCondition[]{};
-    }
 }

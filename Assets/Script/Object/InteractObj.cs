@@ -22,7 +22,6 @@ public class InteractObj : VRTK_InteractableObject
              Debug.Log("[InteractObject] " + this.name + " : Display dialogue failed. Stop!");
         }
         // 文本成功顯示後再設定能力值，能力值只會被設定一次
-        Debug.Log("Triggered ? : " + Option.GetFinish());
         if(Option.GetFinish()){
             Debug.Log("[InteractObject] " + this.name + " : option is triggered again!");
         }

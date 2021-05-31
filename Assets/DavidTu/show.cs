@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class show : VRTK_InteractableObject
+public class show : MonoBehaviour
 {
-    [HeaderAttribute("我的變數")]
-    [SerializeField]
-    private string str;
-    public override void Grabbed(VRTK_InteractGrab currentGrabbingObject = null){
-        Debug.Log("Grab : " + this.name);
-        base.Grabbed(currentGrabbingObject);
+    public void OnTriggerEnter(Collider other){
+        Debug.Log(other.gameObject.layer);
     }
 }
