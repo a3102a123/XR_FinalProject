@@ -9,11 +9,13 @@ public class StatusDisplay : MonoBehaviour, IPointerClickHandler
     public Text Size;
     public Text Strength;
     public Text IQ;
+    public Text Points;
     public const int maxHealth = 100;
 
     public RectTransform HealthBar,Hurt;
     public GameObject Stair;
     public GameObject hp;
+    public PlayerControl player;
 
     // Character object here
 
@@ -25,15 +27,17 @@ public class StatusDisplay : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-      // player = GetComponent<>(); maybe??
+    
     }
 
     // Update is called once per frame
     void Update()
     {
+        int p = player.getPoints();
         Size.text = "Size: " + size;
         Strength.text = "Strength: " + str;
         IQ.text = "IQ: " + iq;
+        Points.text = "Points: " + p;
 
         // maybe get these from character's api
 
