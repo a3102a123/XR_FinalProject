@@ -113,7 +113,9 @@ public class DialogueDisplayer : MonoBehaviour
     public bool Activate(){
         if(!is_act && Register()){
             // prevent reinitial in Start() when create by other script
-            init();
+            if(text_window == null){
+                init();
+            }
             open_file();
             is_act = true;
             is_show = true;
