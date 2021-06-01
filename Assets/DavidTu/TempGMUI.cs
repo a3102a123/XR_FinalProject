@@ -13,6 +13,10 @@ public class TempGMUI : MonoBehaviour
     {
         Status_Obj = GameObject.Find("Status");
         Chapter_Obj = GameObject.Find("Chapter");
+        DialogueDisplayer displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
+        displayer.Constructor("1.txt");
+        displayer.Activate();
+        Invoke("changeScene",9);
     }
 
     // Update is called once per frame

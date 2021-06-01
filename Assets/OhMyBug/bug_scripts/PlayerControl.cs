@@ -50,6 +50,19 @@ public class PlayerControl : MonoBehaviour
         {
             this.point -= 100;
         }
-        Debug.Log("point: " + this.point);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if( col.gameObject.tag == "Obstacle" )
+        {
+            this.point -= 100;
+            Destroy( col.gameObject );
+        }
+    }
+
+    public int getPoints()
+    {
+        return this.point;
     }
 }

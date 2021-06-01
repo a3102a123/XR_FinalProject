@@ -99,3 +99,12 @@ public class EndCondition{
         fail_filename = "./End/NONE/Fail.txt";
     }
 }
+
+[System.Serializable]
+public class SelectOption{
+    [HeaderAttribute("選擇碰撞點")]
+    public SelectPoint Trigger_Point;
+    [HeaderAttribute("選擇該選項的文本檔案路徑")]
+    [Tooltip("輸入以Dialogue資料夾為根目錄的相對路徑")]
+    public string filename;
+}
