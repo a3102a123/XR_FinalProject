@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     public Route GetRoute(){
         return route;
     }
+    // [min,max]
     public bool CheckLimit(Status min_status,Status max_status){
         // check STR
         if(min_status.STR != -1 || max_status.STR != -1){
