@@ -9,6 +9,8 @@ public class EventDecider : MonoBehaviour
     [SerializeField]
     private EventCondition[] Event_List = new EventCondition[2];
 
+    //用文本file path來代表選擇結果
+    private string EventResult = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +53,9 @@ public class EventDecider : MonoBehaviour
             Debug.Log("[EventDecider] " + this.name + "Event initial failed!");
             Destroy(displayer);
         };
+        EventResult = filename;
+    }
+    public string GetResult(){
+        return EventResult;
     }
 }

@@ -9,15 +9,16 @@ public class EventTrigger : MonoBehaviour
     [SerializeField]
     private EventDecider Event;
 
-    [HeaderAttribute("Private flag")]
+    [HeaderAttribute("設定選項")]
     [SerializeField]
-    [Tooltip("顯示來幫忙debug，不受設定影響")]
+    [Tooltip("可以設定是否需要被其他script啟動")]
     private bool is_enable = false;
+
+    [HeaderAttribute("Private flag")]
     [SerializeField]
     [Tooltip("顯示來幫忙debug，不受設定影響")]
     private bool is_triggered = false;
     void Start(){
-        is_enable = false;
         is_triggered = false;
     }
     public void OnTriggerEnter(Collider other){
@@ -30,5 +31,8 @@ public class EventTrigger : MonoBehaviour
     // 使這個Trigger能夠被玩家互動
     public void Enable(){
         is_enable = true;
+    }
+    public string GetEventResult(){
+        return Event.GetResult();
     }
 }

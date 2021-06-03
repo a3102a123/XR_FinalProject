@@ -7,7 +7,7 @@ public class BedSceneManager : MonoBehaviour
 {
     [HeaderAttribute("探索結束")]
     [SerializeField]
-    private bool is_sleeped = false;
+    private bool is_awake = false;
     [SerializeField]
     private GameObject Pillow;
     [SerializeField]
@@ -15,13 +15,31 @@ public class BedSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(is_sleeped){
-            Enabled_EventTrigger.Enable();
-        }
+        isGrabPillow();
+        LeaveBed();
     }
     void isGrabPillow(){
-        if(Pillow.GetComponent<InteractObj>().GetCount() > 0){
-            is_sleeped = true;
+        if( !is_awake && Pillow.GetComponent<InteractObj>().GetCount() > 0){
+            DialogueDisplayer displayer;
+            string filename = "Bed/Chapter2/Awake.txt";
+            displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
+            displayer.Constructor(filename);
+            // 反覆呼叫直到成功顯示文本
+            if(displayer.Activate()){
+                Enabled_EventTrigger.Enable();
+                is_awake = true;
+            }
+        }
+    }
+    void LeaveBed(){
+        string jump = "Bed/Chapter2/Jump.txt";
+        string leave = "Bed/Chapter2/LeaveBed.txt";
+        string result = Enabled_EventTrigger.GetEventResult();
+        if( result == jump ){
+            //change scene
+        }
+        else if(result == leave){
+            //enable next select
         }
     }
 }
