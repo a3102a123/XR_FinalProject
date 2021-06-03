@@ -12,6 +12,8 @@ public class InteractObj : VRTK_InteractableObject
     [SerializeField]
     [Tooltip("使取該物件時所顯示的文本")]
     private DialogueDisplayer Dialogue;
+
+    private int grab_count = 0;
     
     public override void Grabbed(VRTK_InteractGrab currentGrabbingObject = null){
         if(Option == null || Dialogue == null){
@@ -29,6 +31,10 @@ public class InteractObj : VRTK_InteractableObject
             Option.SetFinish();
         }
         base.Grabbed(currentGrabbingObject);
+        grab_count += 1;
+    }
+    public int GetCount(){
+        return grab_count;
     }
     void Reset() {
         Option = GetComponent<OptionTrigger>();
