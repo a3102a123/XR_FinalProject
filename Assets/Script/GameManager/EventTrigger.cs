@@ -24,8 +24,7 @@ public class EventTrigger : MonoBehaviour
     public void OnTriggerEnter(Collider other){
         // 確保只被觸發一次
         if( is_enable && !is_triggered && other.tag != "Interactable"){
-            Event.DecideEvent();
-            is_triggered = true;
+            is_triggered = Event.DecideEvent();
         }
     }
     // 使這個Trigger能夠被玩家互動

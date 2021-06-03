@@ -9,12 +9,15 @@ public class EventDecider : MonoBehaviour
     [SerializeField]
     private EventCondition[] Event_List = new EventCondition[2];
 
+    [HeaderAttribute("Private Variable")]
+    [Tooltip("顯示來幫忙debug，不受設定影響")]
+    [SerializeField]
     //用文本file path來代表選擇結果
     private string EventResult = "";
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventResult = "";
     }
 
     // Update is called once per frame
@@ -22,7 +25,7 @@ public class EventDecider : MonoBehaviour
     {
         
     }
-    public void DecideEvent(){
+    public bool DecideEvent(){
         int i ;
         int len = Event_List.Length;
         DialogueDisplayer displayer;
@@ -38,12 +41,12 @@ public class EventDecider : MonoBehaviour
             if(i == len-1){
                 // all Events don't meet the condition
                 Debug.Log("[EventDecider] " + this.name + " : No One Meet!");
-                return;
+                return false;
             }
         }
         // prevent the Event is empty
         if(Event == null)
-            return;
+            return false;
         string filename = Event.dialogue_filename;
         Debug.Log("[EventDecider] " + this.name + " : Decide display " + filename);
         displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
@@ -52,8 +55,10 @@ public class EventDecider : MonoBehaviour
         if(!displayer.Activate()){
             Debug.Log("[EventDecider] " + this.name + "Event initial failed!");
             Destroy(displayer);
+            return false;
         };
         EventResult = filename;
+        return true;
     }
     public string GetResult(){
         return EventResult;
