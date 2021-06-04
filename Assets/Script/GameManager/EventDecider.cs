@@ -63,4 +63,10 @@ public class EventDecider : MonoBehaviour
     public string GetResult(){
         return EventResult;
     }
+    // 使遊戲進行時可以根據玩家選項修改選項能力值限制
+    public void SetEvent(int idx,Status new_max_stat,Status new_min_stat){
+        EventCondition Event = Event_List[idx];
+        Event.max_status = new_max_stat;
+        Event.min_status = new_min_stat;
+    }
 }

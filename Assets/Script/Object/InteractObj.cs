@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
+[RequireComponent(typeof(OptionTrigger))]
+[RequireComponent(typeof(DialogueDisplayer))]
 public class InteractObj : VRTK_InteractableObject
 {
     [HeaderAttribute("物件所代表的選項")]

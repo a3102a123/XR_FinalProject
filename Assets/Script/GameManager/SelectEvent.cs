@@ -27,7 +27,7 @@ public class SelectEvent : MonoBehaviour
         string filename;
         int i ;
         // 避免二次觸發
-        if(EventResult != ""){
+        if( !is_enable || EventResult != ""){
             return true;
         }
         for(i = 0 ; i < Option_List.Length ; i++){
