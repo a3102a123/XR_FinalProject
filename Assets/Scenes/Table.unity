@@ -262,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1004631637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6631,8 +6631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c6b01b99476334f8e0310533868d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: {fileID: 5824758671008082678}
-  Stair: {fileID: 1004631636}
 --- !u!23 &7659362429373944909
 MeshRenderer:
   m_ObjectHideFlags: 0
