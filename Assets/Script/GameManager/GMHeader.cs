@@ -60,6 +60,11 @@ public class Status{
         INT = i;
         HATE = h;
     }
+    public Status(Status stat){
+        STR = stat.STR;
+        INT = stat.INT;
+        HATE = stat.HATE;
+    }
     public Status(){
         STR = -1;
         INT = -1;
