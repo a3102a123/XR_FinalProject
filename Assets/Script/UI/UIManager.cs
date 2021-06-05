@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
         UpdateIcon();
     }
     void init(){
-        TextWindow.text = "";
+        // TextWindow.text = "";
         STR.text = "None";
         INT.text = "None";
         HATE.text = "None";
