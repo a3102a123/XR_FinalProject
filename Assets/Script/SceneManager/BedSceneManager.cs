@@ -5,6 +5,9 @@ using VRTK;
 
 public class BedSceneManager : MonoBehaviour
 {
+    [HeaderAttribute("開始文本")]
+    [SerializeField]
+    private DialogueDisplayer Start_dia;
     [HeaderAttribute("探索結束")]
     [SerializeField]
     private bool is_awake = false;
@@ -28,6 +31,7 @@ public class BedSceneManager : MonoBehaviour
             displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
             displayer.Constructor(filename);
         }
+        Start_dia.Activate();
     }
     // Update is called once per frame
     void Update()

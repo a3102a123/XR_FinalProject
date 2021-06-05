@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FloorSceneManager : MonoBehaviour
 {
+    [HeaderAttribute("開始文本")]
+    [SerializeField]
+    private DialogueDisplayer Start_dia;
     [HeaderAttribute("探索結束")]
     [SerializeField]
     private GameObject Testpaper;
@@ -27,6 +30,7 @@ public class FloorSceneManager : MonoBehaviour
     void Start(){
         is_init = false;
         is_conv = false;
+        Start_dia.Activate();
     }
 
     // Update is called once per frame
