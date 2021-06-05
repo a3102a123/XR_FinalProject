@@ -10,6 +10,7 @@ public class TableGameManager : MonoBehaviour
     public Text Points;
     public float TotalTime = 60;
     public int goal = 300;
+    public EndDecider End;
 
     private int CurrentPoints = 0;
     private float t;
@@ -24,16 +25,16 @@ public class TableGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.CurrentPoints = player.getPoints();
-        Points.text = "Points: " + CurrentPoints;
         if( t > 0 )
         {
+            this.CurrentPoints = player.getPoints();
+            Points.text = "Points: " + CurrentPoints;
             t -= Time.deltaTime;
             float minutes = Mathf.FloorToInt(t / 60);
             float seconds = Mathf.FloorToInt(t % 60);
             time.text = minutes + " : " +  seconds;
         } 
-        else
+        else if( t > -10 )
         {
             Debug.Log("Time has run out!");
             time.text = "Time's up !!";
@@ -42,14 +43,17 @@ public class TableGameManager : MonoBehaviour
     }
 
     void EndGame(int Points)
-    {
+    { 
+        t -= 10;
         if( Points >= goal )
         {
             Debug.Log("You win this game");
+            End.DecideEnd(false);
         }
         else
         {
-            Debug.Log("Tou lose this game");
+            Debug.Log("You lose this game");
+            End.DecideEnd(true);
         }
     }
 }
