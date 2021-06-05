@@ -14,8 +14,28 @@ public class InteractObj : VRTK_InteractableObject
     [SerializeField]
     [Tooltip("使取該物件時所顯示的文本")]
     private DialogueDisplayer Dialogue;
+    [SerializeField]
+    [Tooltip("是否使物件被grab後不被抓取")]
+    private bool is_touch;
 
+    [HeaderAttribute("Private Variable")]
+    [Tooltip("顯示來幫忙debug，不受設定影響")]
+    [SerializeField]
     private int grab_count = 0;
+
+    Vector3 ori_position;
+    void Start(){
+        grab_count = 0;
+        holdButtonToGrab = is_touch;
+        ori_position = gameObject.transform.position;
+    }
+
+    protected override void  Update(){
+        base.Update();
+        if(is_touch){
+            gameObject.transform.position = ori_position;
+        }
+    }
     
     public override void Grabbed(VRTK_InteractGrab currentGrabbingObject = null){
         if(Option == null || Dialogue == null){

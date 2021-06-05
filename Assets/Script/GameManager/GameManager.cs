@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     // 玩家能力值
     private Status status;
+    // 獲得的道具
+    public bool Smartphone;
+    public bool Earphone;
+    public bool Knife;
+    public bool TestPaper;
 
     [HeaderAttribute("Develop Option")]
     [SerializeField]
@@ -43,6 +48,10 @@ public class GameManager : MonoBehaviour
         }
         route = Route.NONE;
         size = Size.Tiny;
+        Smartphone = false;
+        Earphone = false;
+        Knife = false;
+        TestPaper = false;
         status.init();
     }
     public void ChangeStatus(Status stat){

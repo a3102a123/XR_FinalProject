@@ -5,11 +5,18 @@ using VRTK;
 
 public class BedSceneManager : MonoBehaviour
 {
+    [HeaderAttribute("開始文本")]
+    [SerializeField]
+    private DialogueDisplayer Start_dia;
     [HeaderAttribute("探索結束")]
     [SerializeField]
     private bool is_awake = false;
     [SerializeField]
     private GameObject Pillow;
+    [SerializeField]
+    private GameObject Earphone;
+    [SerializeField]
+    private GameObject SmartPhone;
     [SerializeField]
     private EventTrigger Enabled_EventTrigger;
     [HeaderAttribute("準備離開床上")]
@@ -24,21 +31,29 @@ public class BedSceneManager : MonoBehaviour
             displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
             displayer.Constructor(filename);
         }
+        Start_dia.Activate();
     }
     // Update is called once per frame
     void Update()
     {
-        isGrabPillow();
+        isGrabbed();
         ExploredResult();
         SelectLeaveWay();
     }
-    void isGrabPillow(){
+    void isGrabbed(){
+        GameManager GM = GameManager.GM;
         if( !is_awake && Pillow.GetComponent<InteractObj>().GetCount() > 0){
             // 反覆呼叫直到成功顯示文本
             if(displayer.Activate()){
                 Enabled_EventTrigger.Enable();
                 is_awake = true;
             }
+        }
+        if(!is_awake && SmartPhone.GetComponent<InteractObj>().GetCount() == 1){
+            GM.Smartphone = true;
+        }
+        if(!is_awake && Earphone.GetComponent<InteractObj>().GetCount() == 1){
+            GM.Earphone = true;
         }
     }
     void ExploredResult(){

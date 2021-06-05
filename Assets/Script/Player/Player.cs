@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         for(int i = 0 ; i < Controllers.Length ; i++){
             var controller = Controllers[i];
             controller.TriggerPressed += SkipDialogue;
-            controller.GripPressed += GripHp;
+            controller.ButtonOnePressed += GripHp;
             controller.TouchpadPressed += Jump;
         }
         is_init = Controllers.Length;

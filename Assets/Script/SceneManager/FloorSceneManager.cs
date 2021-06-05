@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class FloorSceneManager : MonoBehaviour
 {
+    [HeaderAttribute("開始文本")]
+    [SerializeField]
+    private DialogueDisplayer Start_dia;
+    [HeaderAttribute("探索結束")]
+    [SerializeField]
+    private GameObject Testpaper;
+    [SerializeField]
+    private GameObject Knife;
     [HeaderAttribute("遇到春嬌事件 Trigger")]
     [SerializeField]
     private EventDecider MosquitoEvent;
@@ -22,6 +30,7 @@ public class FloorSceneManager : MonoBehaviour
     void Start(){
         is_init = false;
         is_conv = false;
+        Start_dia.Activate();
     }
 
     // Update is called once per frame
@@ -30,6 +39,7 @@ public class FloorSceneManager : MonoBehaviour
         if(!is_init){
             init();
         }
+        isGrabbed();
         MeetMosquito();
         ExploredResult();
     }
@@ -42,6 +52,16 @@ public class FloorSceneManager : MonoBehaviour
         //使拿起考卷也可以選擇前往桌上
         MosquitoEvent.SetEvent(1,max_stat,min_stat);
         is_init = true;
+    }
+
+    void isGrabbed(){
+        GameManager GM = GameManager.GM;
+        if(Testpaper.GetComponent<InteractObj>().GetCount() == 1){
+            GM.TestPaper = true;
+        }
+        if(Knife.GetComponent<InteractObj>().GetCount() == 1){
+            GM.Knife = true;
+        }
     }
 
     void MeetMosquito(){
