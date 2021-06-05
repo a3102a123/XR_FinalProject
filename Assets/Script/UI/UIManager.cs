@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
     public Text TextWindow;
     [Tooltip("文本顯示時間")]
     public int Display_Time = 3;
+    [HeaderAttribute("道具icon")]
+    public GameObject Smartphone;
+    public GameObject Earphone;
+    public GameObject Knife;
+    public GameObject TestPaper;
 
     [HideInInspector]
     public DialogueDisplayer displayer;
@@ -26,6 +31,7 @@ public class UIManager : MonoBehaviour
     }
     void Update(){
         UpdateStatus();
+        UpdateIcon();
     }
     void init(){
         TextWindow.text = "";
@@ -33,12 +39,23 @@ public class UIManager : MonoBehaviour
         INT.text = "None";
         HATE.text = "None";
         displayer = null;
+        Smartphone.SetActive(false);
+        Earphone.SetActive(false);
+        Knife.SetActive(false);
+        TestPaper.SetActive(false);
     }
     void UpdateStatus(){
         Status stat = GameManager.GM.GetStatus();
         STR.text = stat.STR.ToString();
         INT.text = stat.INT.ToString();
         HATE.text = stat.HATE.ToString();
+    }
+    void UpdateIcon(){
+        GameManager GM = GameManager.GM; 
+        Smartphone.SetActive(GM.Smartphone);
+        Earphone.SetActive(GM.Earphone);
+        Knife.SetActive(GM.Knife);
+        TestPaper.SetActive(GM.TestPaper);
     }
     public void Dialogue_Continue(){
         if(displayer == null){
