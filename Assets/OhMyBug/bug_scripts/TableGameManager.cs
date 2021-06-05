@@ -48,12 +48,12 @@ public class TableGameManager : MonoBehaviour
         if( Points >= goal )
         {
             Debug.Log("You win this game");
-            End.DecideEnd(true);
+            End.DecideEnd(false);
         }
         else
         {
             Debug.Log("You lose this game");
-            End.DecideEnd(false);
+            End.DecideEnd(true);
         }
     }
 }
