@@ -8,9 +8,9 @@ public class AfterDeadSceneManager : MonoBehaviour
     [SerializeField]
     private DialogueDisplayer Start_dia;
 
-    [HeaderAttribute("行為選擇")]
+    [HeaderAttribute("探索結束")]
     [SerializeField]
-    private EventDecider ActionEvent;
+    private GameObject EarPhone;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,13 @@ public class AfterDeadSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        isGrabbed();
+    }
+    void isGrabbed(){
+        GameManager GM = GameManager.GM;
+        if(EarPhone.GetComponent<InteractObj>().GetCount() == 1){
+            GM.Earphone = true;
+            //Change Scene
+        }
     }
 }

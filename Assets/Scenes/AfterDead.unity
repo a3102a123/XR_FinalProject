@@ -606,6 +606,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5914701270044318471, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: dialogue_filename
+      value: Bed\C_Route/Rappelling.txt
+      objectReference: {fileID: 0}
     - target: {fileID: 7055483555481443026, guid: d411c3588556ee240920c9b29eb8d8b7,
         type: 3}
       propertyPath: m_Name
@@ -666,6 +671,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8339194673813649299, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: isGrabbable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784539794311759083, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: isGrabbable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
 --- !u!1 &1282298919
@@ -698,7 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Start_dia: {fileID: 1323085783}
-  ActionEvent: {fileID: 0}
+  EarPhone: {fileID: 1929399228}
 --- !u!4 &1282298921
 Transform:
   m_ObjectHideFlags: 0
@@ -743,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9ee5cdc9939594db2127876b8e50ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue_filename: Bed/C_Rute/Awake.txt
+  dialogue_filename: Bed/C_Route/Awake.txt
   is_act: 0
 --- !u!4 &1323085784
 Transform:
@@ -759,3 +774,9 @@ Transform:
   m_Father: {fileID: 1282298921}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1929399228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030511904567869468, guid: d411c3588556ee240920c9b29eb8d8b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1207777633}
+  m_PrefabAsset: {fileID: 0}
