@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         UpdateStatus();
     }
     void init(){
-        TextWindow.text = "";
+        // TextWindow.text = "";
         STR.text = "None";
         INT.text = "None";
         HATE.text = "None";
