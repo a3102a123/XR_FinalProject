@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public Text TextWindow;
     [Tooltip("文本顯示時間")]
     public int Display_Time = 3;
+    [Tooltip("轉場等待時間")]
+    public int ChangeScene_Time = 2;
     [HeaderAttribute("道具icon")]
     public GameObject Smartphone;
     public GameObject Earphone;
