@@ -26,10 +26,14 @@ public class FloorSceneManager : MonoBehaviour
     private Status GM_ori_stat;
     private bool is_init = false;
     private bool is_conv = false;
+    private bool is_change = false;
+    private SelectEvent MoveEvent = null;
 
     void Start(){
         is_init = false;
         is_conv = false;
+        is_change = false;
+        MoveEvent = null;
         Start_dia.Activate();
     }
 
@@ -42,6 +46,7 @@ public class FloorSceneManager : MonoBehaviour
         isGrabbed();
         MeetMosquito();
         ExploredResult();
+        MoveWay();
     }
 
     void init(){
@@ -74,17 +79,59 @@ public class FloorSceneManager : MonoBehaviour
         }
         else if(result == scared){
             Debug.Log("Scared!");
+            if (!is_change)
+            {
+                Debug.Log("Floor : Route C");
+                // 確認為C路線
+                GameManager.GM.ChangeRoute(Route.C);
+                is_change = GameManager.GM.ChangeScene("AfterDead");
+            }
             //change scene
         }
     }
     void ExploredResult(){
         if(is_conv){
             Status stat = GameManager.GM.GetStatus();
-            if(stat.STR > GM_ori_stat.STR){
-                EventBoth.Enable();
+            if(MoveEvent == null) {
+                if(stat.STR > GM_ori_stat.STR){
+                    MoveEvent = EventBoth;
+                    EventBoth.Enable();
+                }
+                else{
+                    MoveEvent = EventOnlyRide;
+                    EventOnlyRide.Enable();
+                }
             }
-            else{
-                EventOnlyRide.Enable();
+        }
+    }
+    void MoveWay()
+    {
+        if(MoveEvent == null)
+        {
+            return;
+        }
+        string result = MoveEvent.GetResult();
+        string ride = "Floor/Chapter2/Ride.txt";
+        string explore = "Floor/Chapter2/Explore.txt";
+        if (result == ride)
+        {
+            Debug.Log("Ride");
+            //change scene
+            if (!is_change)
+            {
+                Debug.Log("Floor : Route A");
+                // 確認為A路線
+                GameManager.GM.ChangeRoute(Route.A);
+                is_change = GameManager.GM.ChangeScene("ToTable");
+            }
+        }
+        else if (result == explore)
+        {
+            Debug.Log("Explore");
+            //change scene
+            if (!is_change)
+            {
+                is_change = GameManager.GM.ChangeScene("UnderTable");
             }
         }
     }
