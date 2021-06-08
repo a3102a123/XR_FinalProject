@@ -32,7 +32,7 @@ public class TableManager : MonoBehaviour
                 scene_flag = GM.ChangeScene("Table");
             }
         }
-        if( t > 9)
+        if( t > 9 )
         {
             GameManager GM = GameManager.GM;
             Route path = GM.GetRoute();

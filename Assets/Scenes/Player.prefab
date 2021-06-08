@@ -5092,7 +5092,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013802336, guid: 3461515767f56a340b6d20fe319853c7, type: 3}
       propertyPath: m_FontData.m_Alignment
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114555401326853366, guid: 3461515767f56a340b6d20fe319853c7,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5824758668982565514, guid: 3461515767f56a340b6d20fe319853c7,
         type: 3}
