@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var instance = FindObjectOfType<GameManager>();
+        if(instance != this){
+            Destroy(gameObject);
+            return;
+        }
         GM = this;
         DontDestroyOnLoad(this);
         init();
@@ -109,5 +115,19 @@ public class GameManager : MonoBehaviour
         }
         // 能力值的限制皆符合回傳true
         return true;
+    }
+    public bool ChangeScene(string scene){
+        // 沒有文本顯示才轉場
+        if(UIManager.Instance.displayer == null){
+            Debug.Log("[GameManager] " + this.name +" : Change Scene to " + scene);
+            StartCoroutine(LoadScen(scene));
+            return true;
+        }
+        return false;
+    }
+
+    private IEnumerator LoadScen(string scene){
+        yield return new WaitForSeconds(UIManager.Instance.ChangeScene_Time);
+        SceneManager.LoadScene(scene);
     }
 }

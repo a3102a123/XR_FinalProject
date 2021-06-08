@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DavidTu/TestScene.unity
-    guid: a3430334d23dd1849a19dbc5401640c7
+    path: Assets/Scenes/Bed.unity
+    guid: 90beef532be67b84dad11f6b3cb05539
   - enabled: 1
-    path: Assets/DavidTu/TestScene2.unity
-    guid: f2a8fe939d81bc841b7791feccbf2538
+    path: Assets/Scenes/Floor.unity
+    guid: 17cc794ccdf63e840ad55f89f9cf9cce
+  - enabled: 1
+    path: Assets/Scenes/UnderTable.unity
+    guid: 67c2ba787470e9f4c99e16d26a5e9c9f
+  - enabled: 1
+    path: Assets/Scenes/AfterDead.unity
+    guid: 8bc86932aa65b96448f0649954b7384b
   m_configObjects: {}
