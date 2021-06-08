@@ -3,7 +3,42 @@ guid: e36958c21a45d1248902d75cdd680f69
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Abdomem.002
+    second: {fileID: 2100000, guid: 7a8fc31f0a9babb428c48d7f72346712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: c9b66e0028bdb3646aad9d4bc28c0cab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head.002
+    second: {fileID: 2100000, guid: aac54497f613107418ac0b8c5ccaf4d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Legs.002
+    second: {fileID: 2100000, guid: 2f45665a6ae70794abbcef96616f0b4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torax
+    second: {fileID: 2100000, guid: 2d53a2df1d1452542a2f6b98e5192341, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingArms
+    second: {fileID: 2100000, guid: 65555cdcebe60654c9e287315b4db49f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wings.002
+    second: {fileID: 2100000, guid: 318f59f59b016e04e98ed16d4b684711, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -22,7 +57,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

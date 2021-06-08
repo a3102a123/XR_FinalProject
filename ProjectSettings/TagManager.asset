@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Interactable
+  - Background Music
   layers:
   - Default
   - TransparentFX
