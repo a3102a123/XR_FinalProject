@@ -65,7 +65,7 @@ public class BedSceneManager : MonoBehaviour
             Debug.Log("Jump");
             //change scene
             if(!is_change){
-                is_change = GameManager.GM.ChangeScene("Floor");
+                is_change = GameManager.GM.ChangeScene("AfterDead");
             }
         }
         else if(result == leave){
@@ -80,10 +80,18 @@ public class BedSceneManager : MonoBehaviour
         string result = LeaveEvent.GetResult();
         if( result == ladder ){
             Debug.Log("Ladder");
+            if (!is_change)
+            {
+                is_change = GameManager.GM.ChangeScene("Floor");
+            }
             //change scene
         }
         else if(result == phone){
             Debug.Log("Earphone");
+            if (!is_change)
+            {
+                is_change = GameManager.GM.ChangeScene("Floor");
+            }
             //change scene
         }
     }
