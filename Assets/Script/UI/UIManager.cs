@@ -39,6 +39,10 @@ public class UIManager : MonoBehaviour
         {
             TextUI.SetActive(true);
         }
+        else
+        {
+            TextUI.SetActive(false);
+        }
     }
     void init(){
         TextWindow.text = "";
