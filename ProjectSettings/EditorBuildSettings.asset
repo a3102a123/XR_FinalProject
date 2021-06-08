@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Table.unity
     guid: 549bec8c467b6334291260a0243e9112
+  - enabled: 1
+    path: Assets/Scenes/TampleRun.unity
+    guid: 18be5c0242c886646a35e5bf7bd88e0d
   m_configObjects: {}
