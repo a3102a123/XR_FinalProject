@@ -4939,7 +4939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9ee5cdc9939594db2127876b8e50ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue_filename: 1.txt
+  dialogue_filename: ./Table/End3.txt
   is_act: 0
 --- !u!114 &2789197871556616071
 MonoBehaviour:
