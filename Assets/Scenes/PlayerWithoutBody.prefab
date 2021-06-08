@@ -4731,7 +4731,7 @@ Transform:
   m_GameObject: {fileID: 729433865164230808}
   m_LocalRotation: {x: 0.116378106, y: 0.72682667, z: -0.66482425, w: 0.1272317}
   m_LocalPosition: {x: -1.1812754, y: 1.3094702, z: 3.1039934}
-  m_LocalScale: {x: 0.89849997, y: 0.018589998, z: 0.1662}
+  m_LocalScale: {x: 5.3496523, y: 0.1106845, z: 0.98955166}
   m_Children: []
   m_Father: {fileID: 725031442411167409}
   m_RootOrder: 3
@@ -4860,6 +4860,7 @@ MonoBehaviour:
   HATE: {fileID: 6542264721283949996}
   TextWindow: {fileID: 8299626559382763403}
   Display_Time: 3
+  ChangeScene_Time: 2
   Smartphone: {fileID: 6542264722208636910}
   Earphone: {fileID: 6542264721555810276}
   Knife: {fileID: 6542264721854724536}
@@ -4872,6 +4873,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724845275740524065}
     m_Modifications:
+    - target: {fileID: 5114555401326853366, guid: 3461515767f56a340b6d20fe319853c7,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5824758668982565514, guid: 3461515767f56a340b6d20fe319853c7,
         type: 3}
       propertyPath: m_Name
