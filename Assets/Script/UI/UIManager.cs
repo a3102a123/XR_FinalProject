@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     public GameObject Earphone;
     public GameObject Knife;
     public GameObject TestPaper;
+    public GameObject TextUI;
 
     [HideInInspector]
     public DialogueDisplayer displayer;
@@ -34,6 +35,10 @@ public class UIManager : MonoBehaviour
     void Update(){
         UpdateStatus();
         UpdateIcon();
+        if( displayer != null )
+        {
+            TextUI.SetActive(true);
+        }
     }
     void init(){
         TextWindow.text = "";
