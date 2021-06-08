@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1b8d19e0e44a24a9956449abc6aa7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  route: 0
+  route: 102
   size: 0
   status:
     STR: 100
@@ -175,6 +175,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &73661034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73661035}
+  - component: {fileID: 73661036}
+  m_Layer: 0
+  m_Name: Start_Route_B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73661035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73661034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1282298921}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73661036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73661034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ee5cdc9939594db2127876b8e50ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_filename: Bed/B_Route/Awake.txt
+  is_act: 0
 --- !u!1001 &668224952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -712,7 +757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b2725f4b824524ab853f1f7616496f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Start_dia: {fileID: 1323085783}
+  Start_dia_B: {fileID: 73661036}
+  Start_dia_C: {fileID: 1323085783}
   EarPhone: {fileID: 1929399228}
 --- !u!4 &1282298921
 Transform:
@@ -725,6 +771,7 @@ Transform:
   m_LocalPosition: {x: -16.746933, y: 50.239635, z: -103.1803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 73661035}
   - {fileID: 1323085784}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -740,7 +787,7 @@ GameObject:
   - component: {fileID: 1323085784}
   - component: {fileID: 1323085783}
   m_Layer: 0
-  m_Name: Start
+  m_Name: Start_Route_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,7 +819,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1282298921}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929399228 stripped
 GameObject:
