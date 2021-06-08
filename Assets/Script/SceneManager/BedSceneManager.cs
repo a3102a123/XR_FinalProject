@@ -24,6 +24,7 @@ public class BedSceneManager : MonoBehaviour
     private SelectEvent LeaveEvent;
 
     DialogueDisplayer displayer = null;
+    bool is_change = false;
     void Start(){
         //initial
         if(displayer == null){
@@ -63,6 +64,9 @@ public class BedSceneManager : MonoBehaviour
         if( result == jump ){
             Debug.Log("Jump");
             //change scene
+            if(!is_change){
+                is_change = GameManager.GM.ChangeScene("Floor");
+            }
         }
         else if(result == leave){
             Debug.Log("Leave Bed");
