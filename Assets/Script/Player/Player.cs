@@ -79,6 +79,15 @@ public class Player : MonoBehaviour
         Debug.Log("now points: " + this.point);
     }
 
+    void OnTriggerEnter(Collider col)
+    {
+        if( col.gameObject.tag == "Obstacle" )
+        {
+            this.point -= 100;
+            Destroy( col.gameObject );
+        }
+    }
+
     public int getPoints()
     {
         return this.point;
