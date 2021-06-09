@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2235156269361095129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193620094447100786}
+  - component: {fileID: 1094033830114143853}
+  - component: {fileID: 2695229967998036109}
+  m_Layer: 0
+  m_Name: New Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193620094447100786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235156269361095129}
+  m_LocalRotation: {x: 0.018049804, y: -0.99685943, z: 0.00077104976, w: 0.07710332}
+  m_LocalPosition: {x: -1421.641, y: 1054.211, z: -710.8926}
+  m_LocalScale: {x: 0.04291235, y: 0.04291235, z: 0.04291235}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.24800001, y: -171.15901, z: -2.056}
+--- !u!23 &1094033830114143853
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235156269361095129}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!102 &2695229967998036109
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235156269361095129}
+  m_Text: "\u6BCF\u6B21\u51FA\u53BB\u90FD\u4E0D\u95DC\u9580\u3001\u665A\u4E0A\u90FD\u7184\u71C8\u4E86\u9084\u5927\u8072\u73A9\u904A\u6232\u3001\n\u6C92\u4E8B\u5C31\u6703\u5927\u543C\u5927\u53EB\u3001\u6A5F\u68B0\u9375\u76E4\u771F\u7684\u5F88\u5435\u3001
+    \u5BB5\u591C\u9084\u90FD\n\u6545\u610F\u5403\u5F88\u9999\u7684\u98DF\u7269\u3001\u4F5C\u696D\u4E0D\u6703\u81EA\u5DF1\u5BEB\u90FD\u6284\u6211\u7684\u3001\n\u90FD\u8981\u6211\u5011\u914D\u5408\u4F60\u7684\u5947\u602A\u4F5C\u606F\u3001\u9B27\u9418\u97FF\u4E86\u4E0D\u6703\u6309\u6389\u3001\n\u7761\u89BA\u6253\u547C\u8DDF\u5361\u8ECA\u4E00\u6A23\u5927\u8072\u3001\u6709\u6642\u5019\u9084\u61F6\u5F97\u6D17\u6FA1"
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1.5
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
