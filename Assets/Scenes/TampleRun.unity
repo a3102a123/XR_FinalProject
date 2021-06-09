@@ -1340,6 +1340,7 @@ MonoBehaviour:
   Knife: 0
   TestPaper: 0
   Voice: 1
+  Stop: 0
   Not_init: 1
 --- !u!114 &1301024383 stripped
 MonoBehaviour:
@@ -1701,7 +1702,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 2
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}

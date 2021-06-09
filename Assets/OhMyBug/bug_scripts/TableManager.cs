@@ -6,6 +6,8 @@ public class TableManager : MonoBehaviour
 {
     public DialogueDisplayer Dia_A;
     public DialogueDisplayer Dia_B;
+    public DialogueDisplayer Dia_C;
+    public DialogueDisplayer Dia_C_h;
     public InteractObj Obj;
     public GameObject Stair_hand;
     public GameObject Stair_keyboard;
@@ -36,14 +38,23 @@ public class TableManager : MonoBehaviour
         {
             GameManager GM = GameManager.GM;
             Route path = GM.GetRoute();
+            Status st = GM.GetStatus();
 
             if( path == Route.A )
             {
                 Dia_A.Activate();
             }
-            else
+            else if ( path == Route.B )
             {
                 Dia_B.Activate();
+            }
+            else if ( path == Route.C && st.HATE == 0)
+            {
+                Dia_C.Activate();
+            }
+            else
+            {
+                Dia_C_h.Activate();
             }
 
             t -= 1; 

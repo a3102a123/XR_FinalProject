@@ -145,6 +145,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6627322680112696469}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &601533087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601533088}
+  - component: {fileID: 601533089}
+  m_Layer: 0
+  m_Name: DialogDisplayerC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &601533088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601533087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2129176333}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601533089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601533087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ee5cdc9939594db2127876b8e50ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_filename: ./Table/C.txt
+  is_act: 0
 --- !u!1 &1092180489
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,12 +356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1b8d19e0e44a24a9956449abc6aa7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  route: 101
+  route: 102
   size: 0
   status:
     STR: 100
     INT: 100
-    HATE: 100
+    HATE: 0
   Smartphone: 0
   Earphone: 0
   Knife: 0
@@ -389,6 +434,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2104334118}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2000588585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000588586}
+  - component: {fileID: 2000588587}
+  m_Layer: 0
+  m_Name: DialogDisplayerCh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2000588586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000588585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2129176333}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000588587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000588585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ee5cdc9939594db2127876b8e50ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_filename: ./Table/C_h.txt
+  is_act: 0
 --- !u!1001 &2028123152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -952,6 +1042,8 @@ Transform:
   m_Children:
   - {fileID: 1628205570}
   - {fileID: 2104700919}
+  - {fileID: 601533088}
+  - {fileID: 2000588586}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -969,6 +1061,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dia_A: {fileID: 1628205571}
   Dia_B: {fileID: 2104700920}
+  Dia_C: {fileID: 601533089}
+  Dia_C_h: {fileID: 2000588587}
   Obj: {fileID: 62773801}
   Stair_hand: {fileID: 62773800}
   Stair_keyboard: {fileID: 196090429}
