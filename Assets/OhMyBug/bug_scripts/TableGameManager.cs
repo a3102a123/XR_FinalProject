@@ -50,9 +50,9 @@ public class TableGameManager : MonoBehaviour
                 {
                     scene_flag = GM.ChangeScene("Final_video_2");
                 }
-                else
+                else if( scene_flag == false )
                 {
-                    scene_flag = GM.ChangeScene("Final_video_2");
+                    scene_flag = GM.ChangeScene("Final_video_3");
                 }
             }
 

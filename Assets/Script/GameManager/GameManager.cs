@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         Knife = false;
         TestPaper = false;
         Voice = true;
+        Stop = false;
         status.init();
     }
     public void ChangeStatus(Status stat){
