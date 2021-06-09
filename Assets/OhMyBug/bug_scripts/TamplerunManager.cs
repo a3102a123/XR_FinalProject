@@ -22,6 +22,8 @@ public class TamplerunManager : MonoBehaviour
     private int CurrentPoints = 0;
     private float t;
     private bool game_start = true;
+    private bool game_end = false;
+    private bool scene_flag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,16 @@ public class TamplerunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if( game_end == true )
+        {
+            GameManager GM = GameManager.GM;
+            GM.ChangeRoute(Route.End);
+            if ( scene_flag == false )
+            {
+                scene_flag = GM.ChangeScene("Teacher_room");
+            }
+        }
+
         if( game_start == true )
         {
             Dia_start.Activate();
@@ -67,14 +79,14 @@ public class TamplerunManager : MonoBehaviour
             float r_v = Random.Range(0, v);
             Vector3 myVector = new Vector3(0, r_v, 0);
 
-            Instantiate( wideObstacle, startCenter.transform.position+myVector, Quaternion.Euler (0f, 0f, 0f));
+            Instantiate( wideObstacle, startCenter.transform.position+myVector, Quaternion.Euler (0f, 90f, 0f));
         }
         else
         {
             float r_h = Random.Range(-h, h);
             Vector3 myVector = new Vector3(r_h, v/2, 0);
 
-            Instantiate( heightObstacle, startCenter.transform.position+myVector, Quaternion.Euler (0f, 0f, 0f));
+            Instantiate( heightObstacle, startCenter.transform.position+myVector, Quaternion.Euler (0f, 90f, 0f));
         }
     }
 
@@ -85,10 +97,12 @@ public class TamplerunManager : MonoBehaviour
         if( Points >= goal )
         {
             Debug.Log("You win this game");
+            game_end = true;
         }
         else
         {
             Debug.Log("You lose this game");
+            game_end = true;
         }
     }
 }

@@ -18,6 +18,7 @@ public class TableGameManager : MonoBehaviour
     private bool scene_flag = false;
     private bool game_done = false;
     private bool game_start = true;
+    private bool win;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +42,17 @@ public class TableGameManager : MonoBehaviour
                 GameManager GM = GameManager.GM;
                 Route path = GM.GetRoute();
 
-                if ( scene_flag == false && (path == Route.A || path == Route.B))
+                if ( scene_flag == false && (path == Route.A || path == Route.B) && win == false)
                 {
                     scene_flag = GM.ChangeScene("TampleRun");
+                }
+                else if ( scene_flag == false && (path == Route.A || path == Route.C) && win == true)
+                {
+                    scene_flag = GM.ChangeScene("Final_video_2");
+                }
+                else
+                {
+                    scene_flag = GM.ChangeScene("Final_video_2");
                 }
             }
 
@@ -73,12 +82,14 @@ public class TableGameManager : MonoBehaviour
             Debug.Log("You win this game");
             End.DecideEnd(false);
             game_done = true;
+            win = true;
         }
         else
         {
             Debug.Log("You lose this game");
             End.DecideEnd(true);
             game_done = true;
+            win = false;
         }
     }
 }

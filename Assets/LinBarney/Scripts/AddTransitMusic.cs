@@ -6,18 +6,20 @@ public class AddTransitMusic : MonoBehaviour
 {
     public static AudioSource source;
     public GameObject target;
-    int time_int = 10;
+    public GameObject stopTarget;
+    int time_int = 20;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("timer",1,1);
-        source = GameObject.FindGameObjectWithTag("OtherMusic").GetComponent<AudioSource>();
+        source = GameObject.FindGameObjectWithTag("TransiteMusic").GetComponent<AudioSource>();
         //source.Stop();
         //source.pitch = pitch;
         source.Play();
 
         StartCoroutine(playAudio());
         
+        stopTarget.SetActive(false);
         // gameObject.SetActive(true);
     }
 
@@ -66,8 +68,8 @@ public class AddTransitMusic : MonoBehaviour
             CancelInvoke("timer");
 
             // how to stop current music ?
-            source.Stop();
-            StopCoroutine(playAudio());
+            // source.Stop();
+            // StopCoroutine(playAudio());
         }
     }
 }

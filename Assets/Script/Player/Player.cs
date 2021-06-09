@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VRTK;
 
 public class Player : MonoBehaviour
 {
     public GameObject Stair;
     public GameObject hp;
+    public Image Stop;
     public Material CorrectMaterial;
     public Material WrongMaterial;
 
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     private bool grounded = true;
     private int point = 0;
     private int is_init = 0;
+    private float ColorAlpha = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +49,28 @@ public class Player : MonoBehaviour
     }
 
     void GripHp(object o, ControllerInteractionEventArgs e)
-    {
-        hp.SetActive(false);
-        Stair.SetActive(true);
+    {   
+        GameManager GM = GameManager.GM;
+        Route path = GM.GetRoute();
+        if( path == Route.End )
+        {   
+            if(ColorAlpha == 1.0f)
+            {
+                Stop.GetComponent<Image>().color = new Color(255,255,255,ColorAlpha);
+                ColorAlpha = 0.5f;
+            }
+            else
+            {
+                Stop.GetComponent<Image>().color = new Color(255,255,255,ColorAlpha);
+                ColorAlpha = 1.0f;
+            }
+            
+        }
+        else
+        {
+            hp.SetActive(false);
+            Stair.SetActive(true);
+        }
     }
 
     void Jump(object o, ControllerInteractionEventArgs e)

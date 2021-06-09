@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum Route{
     NONE,
+    End,
     A = 100,
     B,
     C,

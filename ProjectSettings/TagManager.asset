@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Background Music
   - OtherMusic
+  - TransiteMusic
   layers:
   - Default
   - TransparentFX

@@ -468,6 +468,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7645731571042735630, guid: 1d35ed557be4a6f4f900de6260df2fdd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8676268284258361465, guid: 1d35ed557be4a6f4f900de6260df2fdd,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -730,6 +735,12 @@ MonoBehaviour:
   goal: 300
   End: {fileID: 62650859}
   Dia_start: {fileID: 1211954027}
+--- !u!1 &291034105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5282879678511438879, guid: 1d35ed557be4a6f4f900de6260df2fdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 30966538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405854018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5282879678497453689, guid: 1d35ed557be4a6f4f900de6260df2fdd,
@@ -900,6 +911,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &562152138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5282879677661347194, guid: 1d35ed557be4a6f4f900de6260df2fdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 30966538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &565928442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1838942224787404737, guid: 1d35ed557be4a6f4f900de6260df2fdd,
@@ -960,6 +977,8 @@ MonoBehaviour:
   Knife: {fileID: 405854018}
   TestPaper: {fileID: 1429169256}
   TextUI: {fileID: 565928442}
+  VoiceOn: {fileID: 291034105}
+  VoiceOff: {fileID: 562152138}
   displayer: {fileID: 0}
 --- !u!1 &971951830
 GameObject:
@@ -1235,6 +1254,7 @@ MonoBehaviour:
   Earphone: 0
   Knife: 0
   TestPaper: 0
+  Voice: 1
   Not_init: 1
 --- !u!1 &1429169256 stripped
 GameObject:

@@ -5,6 +5,7 @@ using UnityEngine;
 public class bgMusicStart : MonoBehaviour
 {
     public static AudioSource source;
+    public GameObject target;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class bgMusicStart : MonoBehaviour
 
         StartCoroutine(playAudio());
         
+        target.SetActive(false);
         // gameObject.SetActive(true);
     }
 
