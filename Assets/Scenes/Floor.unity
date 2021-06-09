@@ -647,10 +647,13 @@ MonoBehaviour:
   Start_dia: {fileID: 579121578}
   Testpaper: {fileID: 604532714}
   Knife: {fileID: 5529136}
+  Mosquito: {fileID: 576603839}
   AnimeObj: {fileID: 620389711}
   MosquitoEventObj: {fileID: 984694274}
   MosquitoEvent: {fileID: 1487074154}
   MeetDialogue: {fileID: 1524749427}
+  MosVoice: {fileID: 1754112165}
+  BGM: {fileID: 1890480489}
   EventOnlyRide: {fileID: 960243854}
   EventBoth: {fileID: 1437975735}
 --- !u!4 &103930380
@@ -1170,7 +1173,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1306,6 +1309,7 @@ MonoBehaviour:
   Knife: 0
   TestPaper: 0
   Voice: 1
+  Stop: 0
   Not_init: 1
 --- !u!4 &1180818830
 Transform:
@@ -1624,6 +1628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1890480488}
+  is_mute: 0
 --- !u!82 &1754112166
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1638,7 +1643,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1900,7 +1905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1890480489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +1920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1021429350}
   stopTarget: {fileID: 1754112164}
+  is_meet: 0
 --- !u!82 &1890480490
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1929,7 +1935,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2039,8 +2045,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7400208
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
@@ -2055,27 +2076,27 @@ PrefabInstance:
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.679745
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.679745
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.19479923
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.19479923
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90.00001
       objectReference: {fileID: 0}
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
@@ -2085,12 +2106,17 @@ PrefabInstance:
     - target: {fileID: 3624417004128969276, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -31.982002
       objectReference: {fileID: 0}
     - target: {fileID: 4109346245838796934, guid: 8a1d33244ee9b7846945fa21278f086b,
         type: 3}
       propertyPath: m_Name
       value: Mosquito Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109346245838796934, guid: 8a1d33244ee9b7846945fa21278f086b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1d33244ee9b7846945fa21278f086b, type: 3}

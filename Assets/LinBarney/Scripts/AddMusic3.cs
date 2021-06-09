@@ -6,6 +6,7 @@ public class AddMusic3 : MonoBehaviour
 {
     public static AudioSource source;
     public GameObject target;
+    public bool is_mute = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +27,8 @@ public class AddMusic3 : MonoBehaviour
         //     //Debug.Log("GG");
         //     target.SetActive(false);
         // }
-        if(source.volume<0.2f){
-            target.SetActive(true);
+        if(is_mute){
+            this.gameObject.SetActive(false);
         }
         // if (!source.isPlaying){
         //     Debug.Log("GG2");

@@ -5026,7 +5026,7 @@ MonoBehaviour:
   INT: {fileID: 6542264722591320741}
   HATE: {fileID: 6542264721283949996}
   TextWindow: {fileID: 729433864796679435}
-  Display_Time: 3
+  Display_Time: 5
   ChangeScene_Time: 2
   Smartphone: {fileID: 6542264722208636910}
   Earphone: {fileID: 6542264721555810276}

@@ -14,6 +14,8 @@ public class FloorSceneManager : MonoBehaviour
     private GameObject Knife;
     [HeaderAttribute("遇到春嬌事件 Trigger")]
     [SerializeField]
+    private GameObject Mosquito;
+    [SerializeField]
     private GameObject AnimeObj;
     [SerializeField]
     private GameObject MosquitoEventObj;
@@ -21,10 +23,14 @@ public class FloorSceneManager : MonoBehaviour
     private EventDecider MosquitoEvent;
     [SerializeField]
     private DialogueDisplayer MeetDialogue;
+    [SerializeField]
+    private AddMusic3 MosVoice;
     private BoxCollider MosEventCollider;
     private EventTrigger MosquitoEventTrigger;
     private Animator Anime;
     [HeaderAttribute("前往桌上的事件(根據能力值而有不同選項)")]
+    [SerializeField]
+    private AddTransitMusic BGM;
     [SerializeField]
     private SelectEvent EventOnlyRide;
     [SerializeField]
@@ -92,6 +98,7 @@ public class FloorSceneManager : MonoBehaviour
         if(GameManager.GM.Voice == false && !is_meet){
             Player_cma = FindObjectOfType<Camera>();
             MeetDialogue.Activate();
+            MosVoice.is_mute = true;
             is_meet = true;
         }
         // playing anime
@@ -100,7 +107,12 @@ public class FloorSceneManager : MonoBehaviour
             Player_cma.enabled = true;
             MosquitoEventTrigger.Enable();
             MosEventCollider.enabled = true;
+            Mosquito.SetActive(true);
             is_AnimePlay = true;
+            // open voice
+            var Audio = FindObjectOfType<AudioListener>();
+            GameManager.GM.Voice = true;
+            Audio.enabled = true;
         }
         // trigger anime
         else if ( !is_AnimePlay && is_meet && UIManager.Instance.displayer == null){
@@ -116,6 +128,10 @@ public class FloorSceneManager : MonoBehaviour
         if(result == converse){
             Debug.Log("Converse");
             is_conv = true;
+            if (!BGM.is_meet)
+            {
+                BGM.is_meet = true;
+            }
         }
         else if(result == scared){
             Debug.Log("Scared!");

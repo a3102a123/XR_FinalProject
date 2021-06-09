@@ -8,6 +8,7 @@ public class AddTransitMusic : MonoBehaviour
     public GameObject target;
     public GameObject stopTarget;
     int time_int = 20;
+    public bool is_meet = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,17 @@ public class AddTransitMusic : MonoBehaviour
 
         StartCoroutine(playAudio());
         
-        stopTarget.SetActive(false);
+        //stopTarget.SetActive(false);
         // gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (is_meet)
+        {
+            target.SetActive(true);
+        }
         // if (source.isPlaying){
         //     //Debug.Log("GG");
         //     target.SetActive(false);
@@ -61,7 +66,7 @@ public class AddTransitMusic : MonoBehaviour
     }
 
     void timer(){
-        time_int -= 1;
+        time_int -= 0;
         if(time_int == 0){
             Debug.Log("End");
             target.SetActive(true);
