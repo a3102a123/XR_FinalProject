@@ -32,8 +32,12 @@ public class AddMusic3 : MonoBehaviour
         // }
         if(is_mute && source.volume < 0.2f)
         {
-            target.SetActive(true); 
+            target.SetActive(false); 
             this.gameObject.SetActive(false);
+        }
+        if(!is_mute && source.volume < 0.2f)
+        {
+            target.SetActive(true); 
         }
         // if (!source.isPlaying){
         //     Debug.Log("GG2");

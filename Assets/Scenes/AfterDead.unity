@@ -677,7 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1101417992}
-  is_mute: 1
+  is_mute: 0
+  fade: 1
 --- !u!82 &690095529
 AudioSource:
   m_ObjectHideFlags: 0
