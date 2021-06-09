@@ -58,11 +58,13 @@ public class Player : MonoBehaviour
             {
                 Stop.GetComponent<Image>().color = new Color(255,255,255,ColorAlpha);
                 ColorAlpha = 0.5f;
+                GameManager.GM.Stop = true;
             }
             else
             {
                 Stop.GetComponent<Image>().color = new Color(255,255,255,ColorAlpha);
                 ColorAlpha = 1.0f;
+                GameManager.GM.Stop = false;
             }
             
         }
