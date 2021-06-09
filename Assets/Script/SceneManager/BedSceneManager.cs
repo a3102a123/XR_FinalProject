@@ -19,6 +19,7 @@ public class BedSceneManager : MonoBehaviour
     private GameObject SmartPhone;
     [SerializeField]
     private EventTrigger Enabled_EventTrigger;
+    private BoxCollider Enabled_EventColider;
     [HeaderAttribute("準備離開床上")]
     [SerializeField]
     private SelectEvent LeaveEvent;
@@ -32,6 +33,7 @@ public class BedSceneManager : MonoBehaviour
             displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
             displayer.Constructor(filename);
         }
+        Enabled_EventColider = Enabled_EventTrigger.gameObject.GetComponent<BoxCollider>();
         is_change = false;
         Start_dia.Activate();
     }
@@ -56,6 +58,10 @@ public class BedSceneManager : MonoBehaviour
         }
         if(!is_awake && Earphone.GetComponent<InteractObj>().GetCount() == 1){
             GM.Earphone = true;
+        }
+        if(is_awake && UIManager.Instance.displayer == null && !Enabled_EventColider.enabled)
+        {
+            Enabled_EventColider.enabled = true;
         }
     }
     void ExploredResult(){

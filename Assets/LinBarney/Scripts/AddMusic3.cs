@@ -7,6 +7,7 @@ public class AddMusic3 : MonoBehaviour
     public static AudioSource source;
     public GameObject target;
     public bool is_mute = false;
+    public bool fade = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +15,10 @@ public class AddMusic3 : MonoBehaviour
         //source.Stop();
         //source.pitch = pitch;
         source.Play();
-
-        StartCoroutine(playAudio());
+        if (fade)
+        {
+            StartCoroutine(playAudio());
+        }
         
         // gameObject.SetActive(true);
     }
@@ -27,7 +30,9 @@ public class AddMusic3 : MonoBehaviour
         //     //Debug.Log("GG");
         //     target.SetActive(false);
         // }
-        if(is_mute){
+        if(is_mute && source.volume < 0.2f)
+        {
+            target.SetActive(true); 
             this.gameObject.SetActive(false);
         }
         // if (!source.isPlaying){
