@@ -147,8 +147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18840159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.58, y: 56.2, z: -98.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -23.29, y: 56.2, z: -103.14}
+  m_LocalScale: {x: 15, y: 1, z: 7}
   m_Children:
   - {fileID: 92192024}
   m_Father: {fileID: 0}
@@ -162,8 +162,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18840159}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
@@ -845,6 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b182e79381b835479a305bf2d303519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &714098742
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 632450477}
+  is_mute: 0
+  fade: 1
 --- !u!82 &1601895599
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1138,6 +1141,8 @@ MonoBehaviour:
   Earphone: 0
   Knife: 0
   TestPaper: 0
+  Voice: 1
+  Stop: 0
   Not_init: 0
 --- !u!4 &1659723589
 Transform:
