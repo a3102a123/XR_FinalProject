@@ -14,9 +14,16 @@ public class FloorSceneManager : MonoBehaviour
     private GameObject Knife;
     [HeaderAttribute("遇到春嬌事件 Trigger")]
     [SerializeField]
+    private GameObject AnimeObj;
+    [SerializeField]
+    private GameObject MosquitoEventObj;
+    [SerializeField]
     private EventDecider MosquitoEvent;
     [SerializeField]
+    private DialogueDisplayer MeetDialogue;
+    private BoxCollider MosEventCollider;
     private EventTrigger MosquitoEventTrigger;
+    private Animator Anime;
     [HeaderAttribute("前往桌上的事件(根據能力值而有不同選項)")]
     [SerializeField]
     private SelectEvent EventOnlyRide;
@@ -26,11 +33,24 @@ public class FloorSceneManager : MonoBehaviour
     private Status GM_ori_stat;
     private bool is_init = false;
     private bool is_conv = false;
+    private bool is_change = false;
+    private bool is_AnimePlay = false;
+    private bool is_meet = false;
+    private SelectEvent MoveEvent = null;
+    private Camera Player_cma;
 
     void Start(){
         is_init = false;
         is_conv = false;
+        is_change = false;
+        is_AnimePlay = false;
+        is_meet = false;
+        MoveEvent = null;
         Start_dia.Activate();
+        // initial mosquito event
+        MosEventCollider = MosquitoEventObj.GetComponent<BoxCollider>();
+        MosquitoEventTrigger = MosquitoEventObj.GetComponent<EventTrigger>();
+        Anime = AnimeObj.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,8 +60,10 @@ public class FloorSceneManager : MonoBehaviour
             init();
         }
         isGrabbed();
+        isMute();
         MeetMosquito();
         ExploredResult();
+        MoveWay();
     }
 
     void init(){
@@ -64,6 +86,29 @@ public class FloorSceneManager : MonoBehaviour
         }
     }
 
+    void isMute(){
+        var Anime_dis_time = Anime.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        string result = MosquitoEventTrigger.GetEventResult();
+        if(GameManager.GM.Voice == false && !is_meet){
+            Player_cma = FindObjectOfType<Camera>();
+            MeetDialogue.Activate();
+            is_meet = true;
+        }
+        // playing anime
+        else if( Anime_dis_time > 1){
+            AnimeObj.SetActive(false);
+            Player_cma.enabled = true;
+            MosquitoEventTrigger.Enable();
+            MosEventCollider.enabled = true;
+            is_AnimePlay = true;
+        }
+        // trigger anime
+        else if ( !is_AnimePlay && is_meet && UIManager.Instance.displayer == null){
+            AnimeObj.SetActive(true);
+            Player_cma.enabled = false;
+        }
+    }
+
     void MeetMosquito(){
         string result = MosquitoEventTrigger.GetEventResult();
         string converse = "Floor/Chapter2/Converse.txt";
@@ -75,16 +120,58 @@ public class FloorSceneManager : MonoBehaviour
         else if(result == scared){
             Debug.Log("Scared!");
             //change scene
+            if (is_AnimePlay && !is_change)
+            {
+                Debug.Log("Floor : Route C");
+                // 確認為C路線
+                GameManager.GM.ChangeRoute(Route.C);
+                is_change = GameManager.GM.ChangeScene("AfterDead");
+            }
         }
     }
     void ExploredResult(){
         if(is_conv){
             Status stat = GameManager.GM.GetStatus();
-            if(stat.STR > GM_ori_stat.STR){
-                EventBoth.Enable();
+            if(MoveEvent == null) {
+                if(stat.STR > GM_ori_stat.STR){
+                    MoveEvent = EventBoth;
+                    EventBoth.Enable();
+                }
+                else{
+                    MoveEvent = EventOnlyRide;
+                    EventOnlyRide.Enable();
+                }
             }
-            else{
-                EventOnlyRide.Enable();
+        }
+    }
+    void MoveWay()
+    {
+        if(MoveEvent == null)
+        {
+            return;
+        }
+        string result = MoveEvent.GetResult();
+        string ride = "Floor/Chapter2/Ride.txt";
+        string explore = "Floor/Chapter2/Explore.txt";
+        if (result == ride)
+        {
+            Debug.Log("Ride");
+            //change scene
+            if (!is_change)
+            {
+                Debug.Log("Floor : Route A");
+                // 確認為A路線
+                GameManager.GM.ChangeRoute(Route.A);
+                is_change = GameManager.GM.ChangeScene("ToTable");
+            }
+        }
+        else if (result == explore)
+        {
+            Debug.Log("Explore");
+            //change scene
+            if (!is_change)
+            {
+                is_change = GameManager.GM.ChangeScene("UnderTable");
             }
         }
     }

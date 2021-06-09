@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
             var controller = Controllers[i];
             controller.TriggerPressed += SkipDialogue;
             controller.ButtonOnePressed += GripHp;
+            controller.ButtonTwoPressed += Mute;
             controller.TouchpadPressed += Jump;
         }
         is_init = Controllers.Length;
@@ -62,6 +63,13 @@ public class Player : MonoBehaviour
         Debug.Log("now points: " + this.point);
     }
 
+    void Mute(object o, ControllerInteractionEventArgs e){
+        var Audio = FindObjectOfType<AudioListener>();
+        bool New_stat = !GameManager.GM.Voice;
+        GameManager.GM.Voice = New_stat;
+        Audio.enabled = New_stat;
+    }
+
     void OnCollisionEnter(Collision collision) {
         grounded = true;
         Renderer rend = collision.gameObject.GetComponent<Renderer>();
@@ -77,6 +85,15 @@ public class Player : MonoBehaviour
             }
         }
         Debug.Log("now points: " + this.point);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if( col.gameObject.tag == "Obstacle" )
+        {
+            this.point -= 100;
+            Destroy( col.gameObject );
+        }
     }
 
     public int getPoints()

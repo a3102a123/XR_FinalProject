@@ -24,7 +24,7 @@ public class BedSceneManager : MonoBehaviour
     private SelectEvent LeaveEvent;
 
     DialogueDisplayer displayer = null;
-    bool is_change = false;
+    private bool is_change = false;
     void Start(){
         //initial
         if(displayer == null){
@@ -32,6 +32,7 @@ public class BedSceneManager : MonoBehaviour
             displayer = gameObject.AddComponent<DialogueDisplayer>() as DialogueDisplayer;
             displayer.Constructor(filename);
         }
+        is_change = false;
         Start_dia.Activate();
     }
     // Update is called once per frame
@@ -65,7 +66,10 @@ public class BedSceneManager : MonoBehaviour
             Debug.Log("Jump");
             //change scene
             if(!is_change){
-                is_change = GameManager.GM.ChangeScene("Floor");
+                Debug.Log("Bed : Route C");
+                // 確認為C路線
+                GameManager.GM.ChangeRoute(Route.C);
+                is_change = GameManager.GM.ChangeScene("AfterDead");
             }
         }
         else if(result == leave){
@@ -80,10 +84,21 @@ public class BedSceneManager : MonoBehaviour
         string result = LeaveEvent.GetResult();
         if( result == ladder ){
             Debug.Log("Ladder");
+            if (!is_change)
+            {
+                is_change = GameManager.GM.ChangeScene("Floor");
+            }
             //change scene
         }
         else if(result == phone){
             Debug.Log("Earphone");
+            if (!is_change)
+            {
+                Debug.Log("Bed : Route C");
+                // 確認為C路線
+                GameManager.GM.ChangeRoute(Route.C);
+                is_change = GameManager.GM.ChangeScene("ToTable");
+            }
             //change scene
         }
     }
