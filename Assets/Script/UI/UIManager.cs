@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     public GameObject Knife;
     public GameObject TestPaper;
     public GameObject TextUI;
+    public GameObject VoiceOn;
+    public GameObject VoiceOff;
 
     [HideInInspector]
     public DialogueDisplayer displayer;
@@ -67,6 +69,9 @@ public class UIManager : MonoBehaviour
         Earphone.SetActive(GM.Earphone);
         Knife.SetActive(GM.Knife);
         TestPaper.SetActive(GM.TestPaper);
+        // set up voice icon
+        VoiceOn.SetActive(GM.Voice);
+        VoiceOff.SetActive(!GM.Voice);
     }
     public void Dialogue_Continue(){
         if(displayer == null){

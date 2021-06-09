@@ -647,8 +647,10 @@ MonoBehaviour:
   Start_dia: {fileID: 579121578}
   Testpaper: {fileID: 604532714}
   Knife: {fileID: 5529136}
+  AnimeObj: {fileID: 620389711}
+  MosquitoEventObj: {fileID: 984694274}
   MosquitoEvent: {fileID: 1487074154}
-  MosquitoEventTrigger: {fileID: 984694276}
+  MeetDialogue: {fileID: 1524749427}
   EventOnlyRide: {fileID: 960243854}
   EventBoth: {fileID: 1437975735}
 --- !u!4 &103930380
@@ -753,6 +755,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2199444291470514648, guid: 56a0bbe8607396b4abc262c40643b647,
     type: 3}
   m_PrefabInstance: {fileID: 925924715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &620389711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5892038201334415601, guid: 60c54d1f2cc431f4da20a4ed30bbbb10,
+    type: 3}
+  m_PrefabInstance: {fileID: 1538067344}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &669893954
 Mesh:
@@ -1082,9 +1090,10 @@ Transform:
   m_GameObject: {fileID: 984694274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -302.71, y: 114.43, z: -32.29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 25, y: 10, z: 25}
   m_Children:
   - {fileID: 1487074155}
+  - {fileID: 1524749426}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1101,7 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 1487074154}
-  is_enable: 1
+  is_enable: 0
   is_triggered: 0
 --- !u!65 &984694277
 BoxCollider:
@@ -1111,8 +1120,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984694274}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1295,6 +1304,7 @@ MonoBehaviour:
   Earphone: 0
   Knife: 0
   TestPaper: 0
+  Voice: 1
   Not_init: 1
 --- !u!4 &1180818830
 Transform:
@@ -1448,6 +1458,51 @@ Transform:
   m_Father: {fileID: 984694275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1524749425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524749426}
+  - component: {fileID: 1524749427}
+  m_Layer: 0
+  m_Name: MeetDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1524749426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524749425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 984694275}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1524749427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524749425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9ee5cdc9939594db2127876b8e50ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_filename: Floor\Chapter2\Meet.txt
+  is_act: 0
 --- !u!1001 &1538067344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1455,6 +1510,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5892038200698055687, guid: 60c54d1f2cc431f4da20a4ed30bbbb10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5892038201334415600, guid: 60c54d1f2cc431f4da20a4ed30bbbb10,
         type: 3}
       propertyPath: m_RootOrder
@@ -1518,7 +1578,7 @@ PrefabInstance:
     - target: {fileID: 5892038201334415601, guid: 60c54d1f2cc431f4da20a4ed30bbbb10,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5892038201383234652, guid: 60c54d1f2cc431f4da20a4ed30bbbb10,
         type: 3}

@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
             var controller = Controllers[i];
             controller.TriggerPressed += SkipDialogue;
             controller.ButtonOnePressed += GripHp;
+            controller.ButtonTwoPressed += Mute;
             controller.TouchpadPressed += Jump;
         }
         is_init = Controllers.Length;
@@ -60,6 +61,13 @@ public class Player : MonoBehaviour
             grounded = false;
         }
         Debug.Log("now points: " + this.point);
+    }
+
+    void Mute(object o, ControllerInteractionEventArgs e){
+        var Audio = FindObjectOfType<AudioListener>();
+        bool New_stat = !GameManager.GM.Voice;
+        GameManager.GM.Voice = New_stat;
+        Audio.enabled = New_stat;
     }
 
     void OnCollisionEnter(Collision collision) {

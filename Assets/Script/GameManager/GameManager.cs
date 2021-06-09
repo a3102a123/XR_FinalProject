@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public bool Earphone;
     public bool Knife;
     public bool TestPaper;
+    public bool Voice = true;
 
     [HeaderAttribute("Develop Option")]
     [SerializeField]
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         Earphone = false;
         Knife = false;
         TestPaper = false;
+        Voice = true;
         status.init();
     }
     public void ChangeStatus(Status stat){
