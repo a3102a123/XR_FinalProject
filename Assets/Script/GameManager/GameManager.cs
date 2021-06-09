@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public bool Knife;
     public bool TestPaper;
     public bool Voice = true;
+    public bool Stop;
 
     [HeaderAttribute("Develop Option")]
     [SerializeField]
