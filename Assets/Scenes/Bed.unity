@@ -1165,6 +1165,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1157467339, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
+      propertyPath: m_Size.x
+      value: 4.544942
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157467339, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
+      propertyPath: m_Size.z
+      value: 4.4595323
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157467339, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
+      propertyPath: m_Center.x
+      value: 0.6316334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157467339, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
+      propertyPath: m_Center.y
+      value: -13.424609
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157467339, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
+      propertyPath: m_Center.z
+      value: 0.29355356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157467339, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1319794070006298353, guid: d411c3588556ee240920c9b29eb8d8b7,
         type: 3}
       propertyPath: m_Enabled
@@ -1174,6 +1198,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.12376077
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.27223018
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.08948421
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.06694103
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.21609016
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.16008802
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919864024502955829, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7055483555481443026, guid: d411c3588556ee240920c9b29eb8d8b7,
         type: 3}
@@ -1234,6 +1293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270334402516141723, guid: d411c3588556ee240920c9b29eb8d8b7,
+        type: 3}
+      propertyPath: is_touch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d411c3588556ee240920c9b29eb8d8b7, type: 3}
