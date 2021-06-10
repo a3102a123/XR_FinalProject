@@ -560,11 +560,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157467337}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.4041011, y: 27.84901, z: 1}
-  m_Center: {x: 1.2020457, y: -13.424608, z: 0.000042009036}
+  m_Size: {x: 4.544942, y: 27.84901, z: 4.4595323}
+  m_Center: {x: 0.6316334, y: -13.424609, z: 0.29355356}
 --- !u!54 &1157467338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   usingState: 0
   Option: {fileID: 2809268034745953039}
   Dialogue: {fileID: 5914701270044318471}
-  is_touch: 0
+  is_touch: 1
   grab_count: 0
 --- !u!114 &9068271304245730385
 MonoBehaviour:
@@ -2058,11 +2058,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030511904567869468}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.045256004, y: 0.2387367, z: 0.08948454}
-  m_Center: {x: -0.10619105, y: -0.19934422, z: -0.1600895}
+  m_Size: {x: 0.12376077, y: 0.27223018, z: 0.08948421}
+  m_Center: {x: -0.06694103, y: -0.21609016, z: -0.16008802}
 --- !u!1 &1362802623754944635
 GameObject:
   m_ObjectHideFlags: 0
