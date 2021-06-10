@@ -61,5 +61,6 @@ crashlytics-build.properties
 # ignore VS code meta data
 .vscode/
 
-*/Video
+Assets/Video/*
 */Video.meta
+!Assets/Video/.gitkeep
