@@ -88,10 +88,10 @@ public class Player : MonoBehaviour
     }
 
     void Mute(object o, ControllerInteractionEventArgs e){
-        var Audio = FindObjectOfType<AudioListener>();
+        //AudioListener Audio = FindObjectOfType<AudioListener>();
         bool New_stat = !GameManager.GM.Voice;
         GameManager.GM.Voice = New_stat;
-        Audio.enabled = New_stat;
+        AudioListener.volume = New_stat ? 1 : 0;
     }
 
     void OnCollisionEnter(Collision collision) {
