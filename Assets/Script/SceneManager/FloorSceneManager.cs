@@ -101,7 +101,7 @@ public class FloorSceneManager : MonoBehaviour
             MosVoice.is_mute = true;
             is_meet = true;
         }
-        // playing anime
+        // Anime end
         else if( Anime_dis_time > 1){
             AnimeObj.SetActive(false);
             Player_cma.enabled = true;
@@ -109,15 +109,14 @@ public class FloorSceneManager : MonoBehaviour
             MosEventCollider.enabled = true;
             Mosquito.SetActive(true);
             is_AnimePlay = true;
-            // open voice
-            var Audio = FindObjectOfType<AudioListener>();
-            GameManager.GM.Voice = true;
-            Audio.enabled = true;
         }
         // trigger anime
         else if ( !is_AnimePlay && is_meet && UIManager.Instance.displayer == null){
             AnimeObj.SetActive(true);
             Player_cma.enabled = false;
+            // open voice
+            GameManager.GM.Voice = true;
+            AudioListener.volume = 1;
         }
     }
 
